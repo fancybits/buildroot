@@ -15,7 +15,7 @@ RPI_USERLAND_PROVIDES = libegl libgles libopenmax libopenvg
 
 ifeq ($(BR2_aarch64),y)
 
-RPI_USERLAND_CONF_OPTS += -DARM64=ON
+RPI_USERLAND_CONF_OPTS += -DARM64=ON -DOTHER_BOOT_DIR=/mnt/boot
 
 define RPI_USERLAND_EXTRA_LIBFDT_TARGET
 	$(INSTALL) -m 0755 -D \
