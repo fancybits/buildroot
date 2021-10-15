@@ -17,13 +17,6 @@ ifeq ($(BR2_aarch64),y)
 
 RPI_USERLAND_CONF_OPTS += -DARM64=ON
 
-define RPI_USERLAND_EXTRA_LIBFDT_TARGET
-	$(INSTALL) -m 0755 -D \
-		$(@D)/build/lib/libfdt.so \
-		$(TARGET_DIR)/usr/lib/libfdt.so
-endef
-RPI_USERLAND_POST_INSTALL_TARGET_HOOKS += RPI_USERLAND_EXTRA_LIBFDT_TARGET
-
 endif
 
 ifeq ($(BR2_PACKAGE_RPI_USERLAND_HELLO),y)
